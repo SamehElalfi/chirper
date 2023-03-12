@@ -23,6 +23,7 @@ class SendChirpCreatedNotifications implements ShouldQueue
      */
     public function handle(ChirpCreated $event): void
     {
+        // send a notification for all users except the author of the chirp
         foreach (User::wherenot('id', $event->chirp->user_id)->cursor() as $user) {
             $user->notify(new NewChirp($event->chirp));
         }
