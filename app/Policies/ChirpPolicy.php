@@ -13,7 +13,7 @@ class ChirpPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class ChirpPolicy
      */
     public function view(User $user, Chirp $chirp): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class ChirpPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
